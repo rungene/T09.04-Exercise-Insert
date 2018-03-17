@@ -26,6 +26,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 
+import static com.example.android.todolist.data.TaskContract.TaskEntry.TABLE_NAME;
+
 // Verify that TaskContentProvider extends from ContentProvider and implements required methods
 public class TaskContentProvider extends ContentProvider {
 
@@ -95,7 +97,7 @@ public class TaskContentProvider extends ContentProvider {
         switch (match){
                 case TASKS:
                     //inserting values into tasks table
-                    long id = db.insert(TaskContract.TaskEntry.TABLE_NAME,null,values);
+                    long id = db.insert(TABLE_NAME,null,values);
                     if ( id>0 ){
                         //success
 
